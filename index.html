@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>出雲デジタル駆け込み寺 Musubime</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'izumo-blue': '#2563eb',
+                        'izumo-navy': '#1e3a8a',
+                        'izumo-yellow': '#fbbf24',
+                        'izumo-gold': '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .pulse-button {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-izumo-blue rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">結</span>
+                </div>
+                <h1 class="text-xl font-bold text-izumo-navy">出雲デジタル駆け込み寺 Musubime</h1>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-700 hover:text-izumo-blue transition-colors">サービス概要</a>
+                <a href="#features" class="text-gray-700 hover:text-izumo-blue transition-colors">特徴</a>
+                <a href="#event" class="text-gray-700 hover:text-izumo-blue transition-colors">イベント情報</a>
+                <a href="#faq" class="text-gray-700 hover:text-izumo-blue transition-colors">よくある質問</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                誰一人、<br class="md:hidden">デジタルから<br>取り残さない。
+            </h2>
+            <p class="text-lg md:text-xl mb-4 opacity-90 max-w-4xl mx-auto leading-relaxed">
+                地方を支えるのは、私たち若者だけでなく世代を超えた地域の住民とそれをつなぐITの力です。
+            </p>
+            <p class="text-xl md:text-2xl mb-12 text-izumo-yellow font-medium">
+                出雲から届ける。高齢者も、学生も、誰も取り残さないデジタル支援。
+            </p>
+            
+            <!-- イラスト風アイコン -->
+            <div class="flex justify-center items-center mb-12 space-x-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-2">
+                        <span class="text-3xl">👴</span>
+                    </div>
+                    <p class="text-sm">高齢者</p>
+                </div>
+                <div class="text-izumo-yellow text-2xl">+</div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-2">
+                        <span class="text-3xl">👨‍💻</span>
+                    </div>
+                    <p class="text-sm">若手講師</p>
+                </div>
+                <div class="text-izumo-yellow text-2xl">=</div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-2">
+                        <span class="text-3xl">🤝</span>
+                    </div>
+                    <p class="text-sm">つながり</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <button class="pulse-button bg-izumo-yellow hover:bg-izumo-gold text-izumo-navy font-bold py-4 px-8 rounded-full text-lg transition-colors shadow-lg">
+                    📅 次回イベントに申し込む
+                </button>
+                <button class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold py-4 px-8 rounded-full text-lg transition-colors border-2 border-white">
+                    📱 LINE で相談する
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl md:text-4xl font-bold text-izumo-navy mb-4">サービス概要</h3>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    島根県出雲市で開催する「スマホ・PCなんでも相談会」。<br>
+                    地元の若手講師とプログラマーが、皆さんのデジタルライフをサポートします。
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h4 class="text-2xl font-bold text-izumo-navy mb-6">こんな方におすすめ</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-izumo-blue rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <p class="text-gray-700">スマホの設定がわからない高齢者の方</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-izumo-blue rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <p class="text-gray-700">LINE・Instagramを始めたい保護者の方</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-izumo-blue rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <p class="text-gray-700">ITパスポート・基本情報技術者試験を目指す学生</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-izumo-blue rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <p class="text-gray-700">パソコン操作に困っている中小企業の方</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-izumo-blue to-izumo-navy p-8 rounded-2xl text-white">
+                    <h4 class="text-xl font-bold mb-4">🏛️ 出雲の地から</h4>
+                    <p class="mb-4">
+                        古くから「縁結び」で知られる出雲の地で、人と人、人とデジタルをつなぐ新しい「結び」を作ります。
+                    </p>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-izumo-yellow">📍</span>
+                        <span>島根県出雲市</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl md:text-4xl font-bold text-izumo-navy mb-4">3つの特徴</h3>
+                <p class="text-lg text-gray-600">安心して学べる環境をご用意しています</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover text-center">
+                    <div class="w-16 h-16 bg-izumo-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white text-2xl">💬</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-izumo-navy mb-4">聞き放題</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        スマホの設定からSNS、PCまで幅広く相談可能。どんな小さな疑問でもお気軽にどうぞ。
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover text-center">
+                    <div class="w-16 h-16 bg-izumo-yellow rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-izumo-navy text-2xl">😊</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-izumo-navy mb-4">気軽に参加</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        負担の少ない料金設定で安心。予約不要で、思い立った時にお越しいただけます。
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover text-center">
+                    <div class="w-16 h-16 bg-izumo-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white text-2xl">🏫</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-izumo-navy mb-4">地域の学び場</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        地元の人たちが集まり、世代を超えて学び合える温かい場所です。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Info Section -->
+    <section id="event" class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl md:text-4xl font-bold text-izumo-navy mb-4">次回イベント情報</h3>
+                <p class="text-lg text-gray-600">お気軽にお越しください</p>
+            </div>
+
+            <div class="bg-gradient-to-r from-izumo-blue to-izumo-navy p-8 md:p-12 rounded-2xl text-white mb-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-2xl font-bold mb-6">📅 開催情報</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-izumo-yellow">📅</span>
+                                <span>2024年2月17日（土）13:00-17:00</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-izumo-yellow">📍</span>
+                                <span>出雲市民会館 2階 研修室A</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-izumo-yellow">💰</span>
+                                <span>参加費：500円（資料代込み）</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-izumo-yellow">👥</span>
+                                <span>定員：20名（先着順）</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-6">🎒 持ち物</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-izumo-yellow">📱</span>
+                                <span>スマートフォン（お持ちの方）</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-izumo-yellow">💻</span>
+                                <span>ノートパソコン（お持ちの方）</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-izumo-yellow">📝</span>
+                                <span>筆記用具</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-izumo-yellow">☕</span>
+                                <span>やる気と笑顔</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button class="bg-izumo-yellow hover:bg-izumo-gold text-izumo-navy font-bold py-4 px-12 rounded-full text-xl transition-colors shadow-lg mr-4 mb-4">
+                    今すぐ申し込む
+                </button>
+                <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-12 rounded-full text-xl transition-colors shadow-lg mb-4">
+                    LINE で質問する
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl md:text-4xl font-bold text-izumo-navy mb-4">よくある質問</h3>
+                <p class="text-lg text-gray-600">皆さまからよくいただく質問をまとめました</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h4 class="text-lg font-bold text-izumo-navy mb-3">Q. パソコンを持っていなくても参加できますか？</h4>
+                    <p class="text-gray-700">A. はい、大丈夫です。スマートフォンだけでも、手ぶらでも参加いただけます。会場にはパソコンもご用意しています。</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h4 class="text-lg font-bold text-izumo-navy mb-3">Q. 予約は必要ですか？</h4>
+                    <p class="text-gray-700">A. 予約不要です。当日直接お越しください。ただし、定員に達した場合はお断りする場合があります。</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h4 class="text-lg font-bold text-izumo-navy mb-3">Q. どのような相談ができますか？</h4>
+                    <p class="text-gray-700">A. スマホの基本操作、LINE・Instagram・メールの使い方、パソコンの基本操作、資格試験の学習相談など、デジタル関連のことなら何でもお気軽にご相談ください。</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h4 class="text-lg font-bold text-izumo-navy mb-3">Q. 年齢制限はありますか？</h4>
+                    <p class="text-gray-700">A. 年齢制限はありません。小学生からご高齢の方まで、どなたでもご参加いただけます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 px-4 bg-izumo-navy text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-3xl md:text-4xl font-bold mb-8">お問い合わせ</h3>
+            <p class="text-lg mb-8 opacity-90">
+                ご質問やご相談がございましたら、お気軽にお声かけください。
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white bg-opacity-10 p-6 rounded-xl">
+                    <h4 class="text-xl font-bold mb-4">📧 メールでのお問い合わせ</h4>
+                    <p class="text-izumo-yellow">info@musubime-izumo.jp</p>
+                </div>
+                <div class="bg-white bg-opacity-10 p-6 rounded-xl">
+                    <h4 class="text-xl font-bold mb-4">📱 LINEでのお問い合わせ</h4>
+                    <p class="text-izumo-yellow">@musubime-izumo</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button class="bg-izumo-yellow hover:bg-izumo-gold text-izumo-navy font-bold py-4 px-8 rounded-full text-lg transition-colors">
+                    メールで問い合わせる
+                </button>
+                <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full text-lg transition-colors">
+                    LINE で問い合わせる
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="flex items-center justify-center space-x-3 mb-6">
+                <div class="w-10 h-10 bg-izumo-blue rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">結</span>
+                </div>
+                <h4 class="text-xl font-bold">出雲デジタル駆け込み寺 Musubime</h4>
+            </div>
+            <p class="text-gray-400 mb-4">
+                誰一人、デジタルから取り残さない。<br>
+                出雲から届ける、世代を超えたデジタル支援。
+            </p>
+            <p class="text-sm text-gray-500">
+                © 2024 出雲デジタル駆け込み寺 Musubime. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ボタンクリック時のアクション
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.textContent.includes('申し込む')) {
+                    alert('申し込みフォームに移動します。\n（実際のサイトでは申し込みページにリンクします）');
+                } else if (this.textContent.includes('LINE')) {
+                    alert('LINEアプリが開きます。\n（実際のサイトではLINE公式アカウントにリンクします）');
+                } else if (this.textContent.includes('問い合わせ')) {
+                    alert('お問い合わせフォームに移動します。\n（実際のサイトでは問い合わせページにリンクします）');
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97852f15a7d7e399',t:'MTc1NjczNDA3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
