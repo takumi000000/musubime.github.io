@@ -374,13 +374,13 @@
         document.querySelectorAll('button').forEach(button => {
             button.addEventListener('click', function() {
                 if (this.textContent.includes('申し込む')) {
-                    alert('申し込みフォームに移動します。\n（実際のサイトでは申し込みページにリンクします）');
+                    window.open('https://docs.google.com/forms/d/e/1FAIpQLSdn5WAlcwGPyRs-XPy2YRa9EsOpCVgxf2mHlQskE6ruSIYMqA/viewform?usp=header', '_blank');
                 } else if (this.textContent.includes('LINE')) {
             // LINE公式アカウントに移動
-                window.open('https://lin.ee/Wx2glT9', '_blank');
+                    window.open('https://lin.ee/Wx2glT9', '_blank');
             // ↑ LINE公式アカウントの友だち追加リンクに差し替えてください
                 } else if (this.textContent.includes('問い合わせ')) {
-                    alert('お問い合わせフォームに移動します。\n（実際のサイトでは問い合わせページにリンクします）');
+                    window.location.href = "mailto:degikake.msbm@gmail.com?subject=お問い合わせ&body=こちらに内容をご記入ください。";
                 }
             });
         });
